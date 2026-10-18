@@ -11,7 +11,7 @@ Get comfortable on the Linux command line by working through Bandit, a wargame w
 
 | Levels | Main skills | Status |
 |---|---|---|
-| 0 to 4 | SSH, reading files, hidden files, special filenames | In progress |
+| 0 to 4 | SSH, reading files, hidden files, special filenames | Complete |
 | 5 to 9 | find, file types, sorting and filtering text | Not started |
 | 10 to 14 | Encoding, decoding, keys, ports | Not started |
 | 15 to 20 | TLS connections, nc, scanning, cron-style tasks | Not started |
@@ -19,9 +19,6 @@ Get comfortable on the Linux command line by working through Bandit, a wargame w
 
 ## What I learned so far
 Detailed per-level notes are in [bandit-notes.md](bandit-notes.md).
-
-## Evidence
-
 
 ## Next
 Finish levels 0 to 20, then revisit the harder levels with a second pass focused on understanding rather than finishing.
