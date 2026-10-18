@@ -21,10 +21,10 @@ Work is grouped by domain, so the repo can grow for years without turning into a
 | Folder | Focus | Status |
 |---|---|---|
 | `00-labs` | Lab environment: virtualization, baseline VMs, snapshots | In progress |
-| `01-foundations` | Linux, networking, scripting | Planned |
+| `01-foundations` | Linux, networking, scripting | In progress |
 | `02-blue-team` | Detection, incident investigations, vulnerability management, hardening | Planned |
 | `03-offensive` | Web app security, Active Directory, pentest reports, CTF write-ups | Planned |
-| `04-cloud-security` | AWS security baseline, posture management, automated response | Planned |
+| `04-cloud-security` | AWS security baseline, posture management, automated response | In progress |
 | `05-devsecops` | Secrets hygiene, secure pipelines | Planned |
 | `06-grc` | Risk assessments, policies, threat models | Planned |
 | `07-tools` | Small security tools and scripts | Planned |
