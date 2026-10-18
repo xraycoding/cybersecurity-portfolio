@@ -1,14 +1,14 @@
-\# Non-Root Admin User: Stop Using Root
+# Non-Root Admin User: Stop Using Root
 
 
 
-\## Goal
+## Goal
 
 Do all daily work as a limited identity, so root stays locked away.
 
 
 
-\## Part 1: Created the user and group
+## Part 1: Created the user and group
 
 
 
@@ -16,7 +16,7 @@ I created an admin group with the required policy attached to the group, not dir
 
 
 
-!\[IAM users list showing one user that belongs to one group](../assets/admin-user-in-group.png)
+![IAM users list showing one user that belongs to one group](../assets/admin-user-in-group.png)
 
 
 
@@ -24,7 +24,7 @@ The IAM users list shows one user and a Groups count of 1, which confirms the us
 
 
 
-\## Part 2: Enabled MFA on the new user
+## Part 2: Enabled MFA on the new user
 
 
 
@@ -32,7 +32,7 @@ Same approach as root: authenticator app, confirmed with two codes.
 
 
 
-\## Part 3: Signed in as the admin user
+## Part 3: Signed in as the admin user
 
 
 
@@ -40,9 +40,9 @@ I signed out of root and logged in as the new user to confirm everything I need 
 
 
 
-\## What I learned
+## What I learned
 
-\- Permissions through groups are easier to manage than attaching them per user.
+- Permissions through groups are easier to manage than attaching them per user.
 
-\- Full admin is still broad. A later improvement is moving to least-privilege policies.
+- Full admin is still broad. A later improvement is moving to least-privilege policies.
 

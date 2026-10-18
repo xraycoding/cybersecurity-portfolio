@@ -1,14 +1,14 @@
-\# Billing Alerts: Get Warned Before the Bill Arrives
+# Billing Alerts: Get Warned Before the Bill Arrives
 
 
 
-\## Goal
+## Goal
 
 Get alerted before a learning account generates unexpected costs. Cloud mistakes are easy to make and billing alerts are the safety net.
 
 
 
-\## Part 1: Turned on AWS Free Tier alerts
+## Part 1: Turned on AWS Free Tier alerts
 
 
 
@@ -16,7 +16,7 @@ I enabled Free Tier alerts in Billing preferences, delivered to the root user's 
 
 
 
-\## Part 2: Created a monthly budget
+## Part 2: Created a monthly budget
 
 
 
@@ -24,7 +24,7 @@ I created a monthly cost budget of $10 in AWS Budgets, with 80% alert threshold 
 
 
 
-!\[Budgets list showing My Monthly Cost Budget at $10.00 with thresholds OK and health status Healthy](../assets/billing-budget-created.png)
+![Budgets list showing My Monthly Cost Budget at $10.00 with thresholds OK and health status Healthy](../assets/billing-budget-created.png)
 
 
 
@@ -32,7 +32,7 @@ The budget shows a $10.00 limit, its thresholds are OK, and its health status is
 
 
 
-\## Why I didn't build a CloudWatch billing alarm
+## Why I didn't build a CloudWatch billing alarm
 
 
 
@@ -40,17 +40,17 @@ A CloudWatch billing alarm is another way to do this, but it needs extra service
 
 
 
-\## What I learned
+## What I learned
 
-\- Budgets and Free Tier alerts are different: a budget tracks spending against a limit, Free Tier alerts track usage against free allowances.
+- Budgets and Free Tier alerts are different: a budget tracks spending against a limit, Free Tier alerts track usage against free allowances.
 
-\- Alerts are notifications, not hard caps. They tell me, they don't stop spending.
+- Alerts are notifications, not hard caps. They tell me, they don't stop spending.
 
-\- Checking pricing before enabling a service is part of using the cloud safely.
+- Checking pricing before enabling a service is part of using the cloud safely.
 
 
 
-\## Next steps
+## Next steps
 
-\- Consider adding a CloudWatch billing alarm once I've confirmed it stays within the Free Tier.
+- Consider adding a CloudWatch billing alarm once I've confirmed it stays within the Free Tier.
 
