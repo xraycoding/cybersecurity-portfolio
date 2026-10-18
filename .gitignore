@@ -250,3 +250,6 @@ credentials*
 Thumbs.db
 .vscode/
 .idea/
+
+bandit-passwords*
+*password*.txt
