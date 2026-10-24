@@ -18,8 +18,8 @@ Before starting I took VM snapshots, so a lockout could be undone quickly.
 | Stage | Lynis hardening index | Tests performed | Firewall / intrusion software / malware scanner |
 |---|---|---|---|
 | Baseline (fresh install) | 56 | 255 | not detected / not detected / not detected |
-| After SSH, ufw and fail2ban | 66 | n/a | n/a |
-| Final | **72** | 265 | detected / detected / detected |
+| After SSH, ufw and fail2ban | 66 | 265 | detected / detected / detected |
+| After extra SSH settings, login banner, helper packages and automatic updates  | **72** | 265 | detected / detected / detected |
 
 Baseline:
 
@@ -108,6 +108,27 @@ Banner /etc/issue.net
 Validated with `sudo sshd -t`, reloaded the service, and tested login from a new window before closing the old one. `sshd -T` confirmed every value took
 
 ![Effective SSH settings](assets/ssh-extra-settings.png)
+
+### 5. Helper packages and automatic updates
+```
+sudo apt update
+sudo apt install -y libpam-tmpdir apt-listchanges needrestart debsums unattended-upgrades auditd rkhunter
+sudo dpkg-reconfigure -plow unattended-upgrades
+```
+
+| Package | Purpose |
+|---|---|
+| `unattended-upgrades` | Installs security updates automatically |
+| `needrestart` | Flags services still using outdated libraries after an upgrade |
+| `apt-listchanges` | Shows what changed in a package before it is upgraded |
+| `debsums` | Verifies installed files against their package checksums |
+| `auditd` | Records security-relevant system events |
+| `rkhunter` | Scans for known rootkits |
+| `libpam-tmpdir` | Gives each user a private temporary directory |
+
+I chose **Yes** when asked whether to download and install stable updates automatically.
+
+![Enabling automatic updates](assets/AutoUpdate.png)
 
 ## Problems and fixes
 - **Banned my own PC.** Because the VM is behind NAT, every connection from my PC appears as `10.0.2.2`. When I triggered a ban on purpose, all my SSH sessions froze, including open ones. I recovered from the VirtualBox console (which doesn't use SSH) with `sudo fail2ban-client set sshd unbanip 10.0.2.2`, then whitelisted that address with `ignoreip`. This is a lab-only fix, since on a real network the banned address would be the attacker's and I would not whitelist a gateway.
